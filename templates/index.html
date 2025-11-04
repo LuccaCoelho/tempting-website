@@ -1,0 +1,57 @@
+{% extends 'base.html'%}
+
+
+{% block head %}
+<title>Tempting | Official</title>
+{% endblock %}
+
+
+{% block body %}
+<main id="main-content">
+    <div id="home" class="home">
+        <section class="website-home">
+            <div class="video">
+                <video id="bg-header-video" class="bg-header-video" autoplay playsinline loop muted>
+                    <source src="static/videos/faith.mp4" type="video/mp4">
+                </video>
+            </div>
+        </section>
+    </div>
+    <div id="content-page" class="content-page">
+        <section id="music-content" class="music-content page-sections">
+            <div class="music-content-items">
+                <div class="inner-music-content">
+                    <h1 class="music-container-title">MUSIC</h1>
+                    <div class="album-row">
+                        <div class="first-item music-items">
+                            <div class="album-logo">
+                                <a href="" class="first-music-item-pic">
+                                    <img class="album-pic" src="static/images/album1.jpg" alt="Album1">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="second-item music-items">
+                            <div class="album-logo">
+                                <a href="" class="second-music-item-pic">
+                                    <img class="album-pic" src="static/images/album2.jpg" alt="Album2">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="third-item music-items">
+                            <div class="album-logo">
+                                <a href="" class="second-music-item-pic">
+                                    <img class="album-pic" src="static/images/album3.jpg" alt="Album3">
+                                </a>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </section>
+        <section id="shop-content" class="shop-content page-sections">
+            <div class="shop-content-items">
+            </div>
+        </section>
+    </div>
+</main>
+{% endblock %}
