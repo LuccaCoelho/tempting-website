@@ -13,6 +13,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 body {
@@ -108,49 +109,67 @@ body {
   height: auto;
 }
 
-.music-content-items {
+.content-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 50px;
+  width: 100%;
+  gap: 1rem;
+}
+
+.title-row {
+  width: 60%;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 80px 50px;
-  width: 100%;
 }
-
-.inner-music-content {
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  text-align: center;
-}
-
-.music-container-title {
-  margin-bottom: 40px;
-  font-weight: bold;
-  font-size: 1.8rem;
-  letter-spacing: 1px;
-}
-
 .album-row {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  gap: 3rem;
-  flex-wrap: wrap;
-}
-.music-items {
-  border: 2px solid white;
-  width: 100%;
-  max-width: 400px;   /* control how wide each album box gets */
-  aspect-ratio: 1 / 1; /* make them perfect squares */
-  overflow: hidden;    /* hide overflow from object-fit */
-  display: flex;
-  justify-content: center;
   align-items: center;
+  padding: 30px;
+  gap: 1rem;
 }
 
-.album-pic {
+.album-content {
+  border: 1px solid;
+  padding: 30px;
+  border-radius: 12px;
+}
+
+.album-cover {
+  transition: 1s ease;
+}
+
+.album-cover img {
+  max-height: 360px;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+.album-cover:hover {
+  transform: scale(1.05);
+}
+
+.swiper {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* fills container completely */
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #444;
+  width: auto;
+}
+
+.swiper-slide img {
   display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 360px;
 }

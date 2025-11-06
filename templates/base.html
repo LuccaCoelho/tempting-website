@@ -17,7 +17,7 @@
             <nav class="navbar">
                 <div class="nav-content">
                     <a href="index.html" class="tempting-logo">
-                        <img src="*" alt="TEMPTING" class="logo">
+                        <img src="#" alt="TEMPTING" class="logo">
                     </a>
                     <ul class="nav-links">
                         <li><a href="#">Music</a></li>
@@ -30,5 +30,8 @@
         </header>
         {% block body %} {% endblock %}
     </div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
 </body>
 </html>

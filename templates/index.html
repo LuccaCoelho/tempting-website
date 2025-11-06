@@ -3,6 +3,8 @@
 
 {% block head %}
 <title>Tempting | Official</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
 {% endblock %}
 
 
@@ -11,46 +13,61 @@
     <div id="home" class="home">
         <section class="website-home">
             <div class="video">
-                <video id="bg-header-video" class="bg-header-video" autoplay playsinline loop muted>
-                    <source src="static/videos/faith.mp4" type="video/mp4">
-                </video>
+                <a href="#">
+                    <video id="bg-header-video" class="bg-header-video" autoplay playsinline loop muted>
+                        <source src="static/videos/faith.mp4" type="video/mp4">
+                    </video>
+                </a>
             </div>
         </section>
     </div>
     <div id="content-page" class="content-page">
         <section id="music-content" class="music-content page-sections">
-            <div class="music-content-items">
-                <div class="inner-music-content">
-                    <h1 class="music-container-title">MUSIC</h1>
-                    <div class="album-row">
-                        <div class="first-item music-items">
-                            <div class="album-logo">
-                                <a href="" class="first-music-item-pic">
-                                    <img class="album-pic" src="static/images/album1.jpg" alt="Album1">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="second-item music-items">
-                            <div class="album-logo">
-                                <a href="" class="second-music-item-pic">
-                                    <img class="album-pic" src="static/images/album2.jpg" alt="Album2">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="third-item music-items">
-                            <div class="album-logo">
-                                <a href="" class="second-music-item-pic">
-                                    <img class="album-pic" src="static/images/album3.jpg" alt="Album3">
-                                </a>
-                            </div>
-                        </div>
-                    </div>                    
+            <div class="content-items">
+                <div class="title-row">
+                    <div class="title-music">
+                        <a href="#">
+                            <h2>MUSIC</h2>
+                        </a>
+                    </div>
                 </div>
-            </div>
+                <div class="album-row">
+                    {% for album in albums %}
+                    <div class="album-content">
+                        <div class="album-cover">
+                            <a href="#">
+                                <img src="{{album.image_url}}" alt="{{album.title}}">
+                                <h3>{{album.title}}</h3>
+                            </a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
         </section>
-        <section id="shop-content" class="shop-content page-sections">
-            <div class="shop-content-items">
+        <section id="shop-content" class="shop-content">
+            <div class="content-items">
+                <div class="title-row">
+                    <div class="title-shop">
+                        <a href="#">
+                            <h2>SHOP</h2>
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper shop-swiper">
+                    <div class="swiper-wrapper">
+                        {% for product in products %}
+                        <div class="swiper-slide">
+                            <img src="{{ product.image_url }}" alt="{{ product.title }}">
+                            <h3>{{ product.title }}</h3>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+
             </div>
+
         </section>
     </div>
 </main>
