@@ -3,7 +3,6 @@
 
 {% block head %}
 <title>Tempting | Official</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 {% endblock %}
 
@@ -26,15 +25,13 @@
             <div class="content-items">
                 <div class="title-row">
                     <div class="title-music">
-                        <a href="#">
-                            <h2>MUSIC</h2>
-                        </a>
+                        <h2>MUSIC</h2>
                     </div>
                 </div>
-                <div class="album-row">
+                <div class="album-row content-row">
                     {% for album in albums %}
-                    <div class="album-content">
-                        <div class="album-cover">
+                    <div class="album-content content-row-wrapper">
+                        <div class="album-cover content-row-inner">
                             <a href="#">
                                 <img src="{{album.image_url}}" alt="{{album.title}}">
                                 <h3>{{album.title}}</h3>
@@ -44,30 +41,35 @@
                     {% endfor %}
                 </div>
         </section>
-        <section id="shop-content" class="shop-content">
+        <section id="shop-content" class="shop-content page-sections">
             <div class="content-items">
                 <div class="title-row">
                     <div class="title-shop">
-                        <a href="#">
-                            <h2>SHOP</h2>
-                        </a>
+                        <h2>SHOP</h2>
                     </div>
                 </div>
-                <div class="swiper shop-swiper">
-                    <div class="swiper-wrapper">
-                        {% for product in products %}
-                        <div class="swiper-slide">
-                            <img src="{{ product.image_url }}" alt="{{ product.title }}">
-                            <h3>{{ product.title }}</h3>
+                <div class="shop-row content-row">
+                    {% for product in products %}
+                    <div class="shop-content content-row-wrapper">
+                        <div class="product-img content-row-inner">
+                            <a href="#">
+                                <img src="{{product.image_url}}" alt="{{product.title}}">
+                                <h3>{{product.title}}</h3>
+                            </a>
                         </div>
-                        {% endfor %}
                     </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
+                    {% endfor %}
                 </div>
-
             </div>
-
+        </section>
+        <section id="video-content" class="video-content page-section">
+            <div class="content-items">
+                <div class="title-row">
+                    <div class="title-videos">
+                        <h2>VIDEOS</h2>
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
 </main>

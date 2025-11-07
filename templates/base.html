@@ -17,12 +17,12 @@
             <nav class="navbar">
                 <div class="nav-content">
                     <a href="index.html" class="tempting-logo">
-                        <img src="#" alt="TEMPTING" class="logo">
+                        <img src="/index.html" alt="TEMPTING" class="logo">
                     </a>
                     <ul class="nav-links">
-                        <li><a href="#">Music</a></li>
-                        <li><a href="#">Shop</a></li>
-                        <li><a href="#">Videos</a></li>
+                        <li><a href="#music-content">Music</a></li>
+                        <li><a href="#shop-content">Shop</a></li>
+                        <li><a href="#video-content">Videos</a></li>
                         <li><a href="#">Cart</a></li> 
                     </ul>
                 </div>
@@ -30,7 +30,6 @@
         </header>
         {% block body %} {% endblock %}
     </div>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 
 </body>
