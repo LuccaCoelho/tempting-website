@@ -30,7 +30,7 @@
                 </div>
                 <div class="album-row content-row">
                     {% for album in albums %}
-                    <div class="album-content content-row-wrapper">
+                    <div class="album-container content-row-wrapper">
                         <div class="album-cover content-row-inner">
                             <a href="#">
                                 <img src="{{album.image_url}}" alt="{{album.title}}">
@@ -50,7 +50,7 @@
                 </div>
                 <div class="shop-row content-row">
                     {% for product in products %}
-                    <div class="shop-content content-row-wrapper">
+                    <div class="shop-container content-row-wrapper">
                         <div class="product-img content-row-inner">
                             <a href="#">
                                 <img src="{{product.image_url}}" alt="{{product.title}}">
@@ -68,6 +68,8 @@
                     <div class="title-videos">
                         <h2>VIDEOS</h2>
                     </div>
+                </div>
+                <div class="video-row content-row">
                 </div>
             </div>
         </section>

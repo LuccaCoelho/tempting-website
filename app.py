@@ -21,7 +21,13 @@ def index():
         {"title": "Product3", "image_url": "/static/images/product3.jpeg"},
         {"title": "Product4", "image_url": "/static/images/product4.jpg"}
     ]
-    return render_template("index.html", albums=albums, products=products)
+
+    thumbnails = [
+        {"title": "video1", "image_url": "/static/images/music1.jpg", "texts": ["This is the name of the album", "director: blablabla", "production: blablabla", "credits: wtv"]},
+        {"title": "video2", "image_url": "/static/images/music2.jpeg", "texts": ["This is the name of the album", "director: blablabla", "production: blablabla", "credits: wtv"]},
+        {"title": "video3", "image_url": "/static/images/music3.jpg", "texts": ["This is the name of the album", "director: blablabla", "production: blablabla", "credits: wtv"]}
+    ]
+    return render_template("index.html", albums=albums, products=products, thumbnails=thumbnails)
 
 @app.route("/api/videos")
 def get_videos():

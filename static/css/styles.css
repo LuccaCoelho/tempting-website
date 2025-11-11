@@ -149,10 +149,17 @@ body {
 
 .content-row-inner img {
   max-height: 360px;
+  max-width: 400px;
   border-radius: 16px;
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
 }
 
 .album-cover:hover {
   transform: scale(1.05);
+}
+
+.video-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
