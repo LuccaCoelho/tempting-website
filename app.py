@@ -10,23 +10,16 @@ app.config.from_object(DevelopmentConfig)
 @app.route("/")
 def index():
     albums = [
-        {"title": "Album1", "image_url": "/static/images/album1.jpg"},
-        {"title": "Album2", "image_url": "/static/images/album2.jpg"},
-        {"title": "Album3", "image_url": "/static/images/album3.jpg"},
+        {"title": "Album1", "image_url": "/static/images/album1.jpg"}
     ]
 
     products = [
-        {"title": "Product1", "image_url": "/static/images/product1.png"},
-        {"title": "Product2", "image_url": "/static/images/product2.jpg"},
-        {"title": "Product3", "image_url": "/static/images/product3.jpeg"},
-        {"title": "Product4", "image_url": "/static/images/product4.jpg"}
+        {"title": "Product1", "image_url": "/static/images/product1.png"}
     ]
 
     thumbnails = [
-        {"title": "video1", "image_url": "/static/images/music1.jpg", "texts": ["This is the name of the album", "director: blablabla", "production: blablabla", "credits: wtv"]},
-        {"title": "video2", "image_url": "/static/images/music2.jpeg", "texts": ["This is the name of the album", "director: blablabla", "production: blablabla", "credits: wtv"]},
-        {"title": "video3", "image_url": "/static/images/music3.jpg", "texts": ["This is the name of the album", "director: blablabla", "production: blablabla", "credits: wtv"]}
-    ]
+        {"title": "video1", "image_url": "/static/images/music1.jpg", "texts": ["This is the name of the album", "director: blablabla", "production: blablabla", "credits: wtv"]}
+                ]
     return render_template("index.html", albums=albums, products=products, thumbnails=thumbnails)
 
 @app.route("/api/videos")
@@ -49,6 +42,10 @@ def get_videos():
     data = response.json()
 
     return jsonify(data)
+
+@app.route("/Drunk-Driving")
+def drunk_driving():
+    return render_template("drunk_driving.html")
 
 if __name__ == "__main__":
     app.run(app.config['DEBUG'])

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+    {% block head %} {% endblock %}
+</head>
+<body>
+    <div id="page" class="">
+        <div id="slide-menu-div" class="site-header-album slide-menu-div" style="top: 100px"></div>
+        <!--Start Header--> 
+        <header id="site-header" class="main-header">
+            <nav class="navbar-album">
+                <div class="nav-content">
+                    <a href="{{ url_for('index') }}" class="tempting-logo">
+                        <img src="*" alt="TEMPTING" class="logo">
+                    </a>
+                </div>
+            </nav>
+        </header>
+        {% block body %} {% endblock %}
+    </div>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>

@@ -2,21 +2,20 @@ html {
   scroll-behavior: smooth;
 }
 
-.raleway-font {
-  font-family: "Raleway", sans-serif;
+.google-sans-code-customFont {
+  font-family: "Google Sans Code", monospace;
   font-optical-sizing: auto;
-  font-weight: 100;
   font-style: normal;
 }
 
 * {
-    font-family: "Raleway", sans-serif;
-    color: #fff;
-    font-size: 28px;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
+  font-family: "google-sans-code-customFront";
+  color: #fff;
+  font-size: 28px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
 body {
@@ -30,7 +29,16 @@ body {
   padding: 1rem 2rem;
   z-index: 90; 
   background: rgba(0, 0, 0, 0);
-  backdrop-filter: blur(4px); 
+  backdrop-filter: blur(2px); 
+}
+
+.navbar-album {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  z-index: 90; 
+  background: rgba(0, 0, 0, 0);
 }
 
 .nav-content {
@@ -101,6 +109,14 @@ body {
 }
 .hero-content p {
   font-size: 1.2rem;
+}
+
+.site-header-album {
+  background-image: url("/static/images/DSC01861.jpg");
+  background-size: cover; /* or contain, auto, specific values */
+  background-repeat: no-repeat; /* or repeat, repeat-x, repeat-y */
+  background-position: center center; /* or top, bottom, left, right, specific values */
+  height: 700px;
 }
 
 #content-page {

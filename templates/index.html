@@ -32,7 +32,7 @@
                     {% for album in albums %}
                     <div class="album-container content-row-wrapper">
                         <div class="album-cover content-row-inner">
-                            <a href="#">
+                            <a href="{{ url_for('drunk_driving') }}">
                                 <img src="{{album.image_url}}" alt="{{album.title}}">
                                 <h3>{{album.title}}</h3>
                             </a>
@@ -70,6 +70,10 @@
                     </div>
                 </div>
                 <div class="video-row content-row">
+                    {% for thumbnail in thumbnails %}
+                    <div class="video-thumbnail">
+
+                    </div>
                 </div>
             </div>
         </section>
