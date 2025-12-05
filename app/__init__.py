@@ -11,7 +11,11 @@ def create_app():
     app.config.from_object(Config)
     db.init_app(app)
 
-    db.create_all()
+    with app.app_context():
+        try:
+            db.create_all(checkfirst=True)
+        except Exception as e:
+            print("Database not ready yet:", e)
 
     migrate.init_app(app, db)
     from .routes import bp
