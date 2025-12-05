@@ -61,8 +61,9 @@ h6 {
   list-style: none;
   display: flex;
   gap: 1rem;
-  flex: 0 0 30%;
+  flex: 0 0 5%;
   justify-content: right;
+  padding-right: 30px;
 }
 
 .nav-links a {
