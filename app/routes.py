@@ -47,7 +47,6 @@ def submit():
         email=email,
         first_name=first_name,
         last_name=last_name,
-        confirmed=False,
         confirmation_token=confirmation_token
     )
 
@@ -60,7 +59,7 @@ def submit():
         flash("Email is already signed up!", "error")
     except Exception as e:
         db.session.rollback()
-        flash(f"An unexpected error occurred: {str(e)}", "error")
+        flash("An unexpected error occurred.")
 
     return redirect(url_for("main.index") + "#user-sign-up-section")
 
