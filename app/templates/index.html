@@ -78,43 +78,6 @@
                 </div>
             </div>
         </section>
-        <section id="user-sign-up-section" class="user-sign-up-section">
-            <div class="content-items">
-                <div class="title-row">
-                        <div class="title-sign-up">
-                            <div class="line"></div>
-                            <h2>SIGN UP</h2>
-                            <div class="line"></div>
-                        </div>
-                    </div>
-                <div class="sign-up-form content-row">
-                    <div class="form-content">
-                        <div class="form-title">
-                            <h2>SIGN UP TO RECEIVE UPDATES</h2>
-                        </div>
-                        <form action="{{ url_for('main.submit') }}" method="POST">
-                            <div class="form-inputs">
-                                <input title="Enter Your First Name" type="text" id="first_name" name="first_name" size="30" placeholder="First Name *" required aria-required="true" aria-label="Enter Your First Name">
-                                <input title="Enter Your Last Name" type="text" id="last_name" name="last_name" size="30" placeholder="Last Name *" required aria-required="true" aria-label="Enter Your Last Name">
-                                <input title="Enter Your Email Address" type="email" id="email" name="email" size="30" placeholder="Email Address *" required aria-required="true" aria-label="Enter Your Email Address">
-                            </div>
-                            <h6>By providing this information, you are opting to receive emails from Tempting with news, special offers, and messages. 
-                                Fields marked with an asterisk (*) are required. You will receive an email confirming you signed up.</h6>
-                            <div class="form-button"><button type="submit">SIGN UP</button></div>
-                        </form>
-                    </div>
-                </div>
-                {% with messages = get_flashed_messages(with_categories=true) %}
-                    {% if messages %}
-                        <ul>
-                        {% for category, message in messages %}
-                            <li class="{{ category }}">{{ message }}</li>
-                        {% endfor %}
-                        </ul>
-                    {% endif %}
-                {% endwith %}
-            </div>
-        </section>
     </div>
 </main>
 <div id="video-modal" class="video-modal hidden">
