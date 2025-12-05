@@ -1,0 +1,127 @@
+{% extends 'base.html'%}
+
+
+{% block head %}
+<title>Tempting | Official</title>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% endblock %}
+
+
+{% block body %}
+<main id="main-content">
+    <div id="home" class="home">
+        <section class="website-home">
+            <div class="video">
+                <a href="#">
+                    <img id="bg-header-video" class="bg-header-video" src="/static/images/hero/tempting_hero.png" alt="">
+                </a>
+            </div>
+        </section>
+    </div>
+    <div id="content-page" class="content-page">
+        <section id="music-content" class="music-content page-sections">
+            <div class="content-items">
+                <div class="title-row">
+                    <div class="title-music">
+                        <div class="line"></div>
+                        <h2>MUSIC</h2>
+                        <div class="line"></div>
+                    </div>
+                </div>
+                <div class="album-row content-row">
+                    {% for album in albums %}
+                    <div class="album-container content-row-wrapper">
+                        <div class="album-cover content-row-inner">
+                            <a href="{{ album.linktree }}">
+                                <img src="{{album.image_url}}" alt="{{album.title}}">
+                                <div class="hover-cover">
+                                    <div class="music-credits-content">
+                                        <h3>LISTEN NOW</h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <h3>{{album.title}}</h3>
+                    </div>
+                    {% endfor %}
+                </div>
+        </section>
+        <section id="video-content" class="video-content page-section">
+            <div class="content-items">
+                <div class="title-row">
+                    <div class="title-videos">
+                        <div class="line"></div>
+                        <h2>PRODUCTIONS</h2>
+                        <div class="line"></div>
+                    </div>
+                </div>
+                <div class="video-row content-row">
+                    {% for video in thumbnails %}
+                    <div class="video-container content-row-wrapper">
+                        <a href="#" class="openVideo" data-video-id="{{ video.ID }}">
+                            <div class="video-thumbnail content-row-inner">
+                                <img class="thumb-img" src="{{ video.thumbnail }}" alt="{{ video.title }}">
+                                <div class="yt-play-btn"></div>
+                                <div class="hover-cover">
+                                    <div class="credits-content">
+                                        <h4>CREDITS</h4>
+                                        <span></span>
+                                        <p>Director: {{ video.director }}</p>
+                                        <p>Producer: {{ video.producer }}</p>
+                                        <p>Leading Roles: {{ video.leading_roles }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <section id="user-sign-up-section" class="user-sign-up-section">
+            <div class="content-items">
+                <div class="title-row">
+                        <div class="title-sign-up">
+                            <div class="line"></div>
+                            <h2>SIGN UP</h2>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                <div class="sign-up-form content-row">
+                    <div class="form-content">
+                        <div class="form-title">
+                            <h2>SIGN UP TO RECEIVE UPDATES</h2>
+                        </div>
+                        <form action="{{ url_for('main.submit') }}" method="POST">
+                            <div class="form-inputs">
+                                <input title="Enter Your First Name" type="text" id="first_name" name="first_name" size="30" placeholder="First Name *" required aria-required="true" aria-label="Enter Your First Name">
+                                <input title="Enter Your Last Name" type="text" id="last_name" name="last_name" size="30" placeholder="Last Name *" required aria-required="true" aria-label="Enter Your Last Name">
+                                <input title="Enter Your Email Address" type="email" id="email" name="email" size="30" placeholder="Email Address *" required aria-required="true" aria-label="Enter Your Email Address">
+                            </div>
+                            <h6>By providing this information, you are opting to receive emails from Tempting with news, special offers, and messages. 
+                                Fields marked with an asterisk (*) are required. You will receive an email confirming you signed up.</h6>
+                            <div class="form-button"><button type="submit">SIGN UP</button></div>
+                        </form>
+                    </div>
+                </div>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        <ul>
+                        {% for category, message in messages %}
+                            <li class="{{ category }}">{{ message }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endwith %}
+            </div>
+        </section>
+    </div>
+</main>
+<div id="video-modal" class="video-modal hidden">
+    <div class="video-modal-content">
+        <span id="close-video" class="close-video">×</span>
+        <iframe id="ytPlayer" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+{% endblock %}
