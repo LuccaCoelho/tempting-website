@@ -8,7 +8,6 @@ class User(db.Model):
     email = db.Column(db.String(255), unique=True, nullable=False)
     first_name = db.Column(db.String(100))
     last_name = db.Column(db.String(100))
-    confirmed = db.Column(db.Boolean, default=False)
     created_at = db.Column(db.DateTime, default=datetime.now())
     confirmation_token = db.Column(db.String(255), unique=True)
 
