@@ -15,7 +15,6 @@ html {
   font-size: 28px;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   text-decoration: none;
 }
 
@@ -158,6 +157,7 @@ h6 {
 .title-music {
   display: flex;
   justify-content: center;
+  margin-top: 30px;
 }
 
 .title-music h2 {
@@ -211,6 +211,7 @@ h6 {
   position: relative;
   width: 400px;
   height: 400px; 
+  margin-bottom: 5px;
   overflow: hidden;
 }
 
@@ -434,6 +435,10 @@ input {
   border: none;
   cursor: pointer;
 }
+
+form {
+  margin: 50px auto 0 auto;
+}
 @media (max-width: 800px) {
   .desktop-nav {
       display: none;
@@ -441,6 +446,11 @@ input {
 
   .website-home {
     height: 600px;
+  }
+
+  .sign-up-form {
+    padding-bottom: 100px;
+    padding-top: 0px;
   }
 
   .form-content .form-inputs {
@@ -451,10 +461,104 @@ input {
     justify-content: center;
   }
 
+  .form-title {
+    height: ;
+  }
+
+  .content-items {
+    height: 680px;
+  }
+
   input {
     display: flex;
     align-items: center;
     margin: 50px auto 0 auto;
+  }
+
+  .form-title h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 450px) {
+  .desktop-nav {
+      display: none;
+  } 
+
+  .website-home {
+    height: 350px;
+  }
+
+  .content-items {
+    height: 550px;
+  }
+
+  .album-cover {
+    position: relative;
+    width: 250px;
+    height: 250px; 
+    overflow: hidden;
+  }
+
+  .album-row {
+    display: flex;
+    justify-items: center;
+    padding-bottom: 30px;
+    height: 380px;
+  }
+
+  .title-row h2 {
+    width: 250px;
+    text-align: center;
+  }
+
+  .sign-up-form {
+    height: 550px;
+  }
+
+  .video-thumbnail {
+    height: 220px;
+    width: 380px;
+  }
+
+  .video-row {
+    padding-bottom: 97.5px;
+    max-height: 360px;
+  }
+
+  .form-title h2 {
+    font-size: 20px;
+  }
+
+  .form-content .form-inputs {
+    width: 300px;
+    height: 150px;
+    margin-left: 40px;
+  }
+
+  .form-inputs {
+    gap: 1rem;
+  }
+
+  input {
+    width: 150px;
+    font-size: 18px;
+    height: auto;
+  }
+
+  .form-content {
+    height: 500px;
+    margin-top: 200px;
+    margin-bottom: 300px;
+  }
+
+  form {
+    padding-bottom: 50px;
+  }
+
+  .social-icon {
+    height: 16pxpx;
+    width: 16px;
   }
 }
 
